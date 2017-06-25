@@ -11,8 +11,8 @@ class DocumentsController < ApplicationController
 
     result = {
       title: metadata['title'],
+      content_type: metadata['Content-Type'],
       created_at: metadata['meta:creation-date'],
-      created_at_human: metadata['created'],
       metadata: metadata,
       text: parsed_document.text
     }
