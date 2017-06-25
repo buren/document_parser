@@ -1,0 +1,44 @@
+{
+  "name": "Document Parser",
+  "description": "This app does one little thing, and does it well. Which is to wrap the yomu gem.",
+  "keywords": [
+    "tool",
+    "document parser"
+  ],
+  "website": "https://github.com/buren/document_parser/",
+  "repository": "https://github.com/buren/document_parser/",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "rails db:migrate"
+  },
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "2"
+    },
+    "API_AUTH_TOKEN": {
+      "description": "API Auth token"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/java"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
