@@ -1,6 +1,6 @@
 require 'yomu'
 
-class DocumentController < ApplicationController
+class DocumentsController < ApplicationController
   def create
     file_param = document_params[:file]
     decoded_file = Base64.decode64(file_param)

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  post 'document/create'
+  resource :documents, only: %i(create)
 end
