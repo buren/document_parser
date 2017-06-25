@@ -6,6 +6,6 @@ class ApplicationController < ActionController::API
     return if env_token.blank?
     return if params[:auth_token] == env_token
 
-    render json: { message: 'Invalid API auth token' }, status: :forbidden
+    render json: { status: 403, message: 'Invalid API auth token' }, status: :forbidden
   end
 end
