@@ -21,7 +21,8 @@
       "value": "2"
     },
     "API_AUTH_TOKEN": {
-      "description": "API Auth token"
+      "description": "API Auth token",
+      "generator": "secret"
     }
   },
   "image": "heroku/ruby",
