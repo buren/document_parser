@@ -18,7 +18,7 @@
     },
     "WEB_CONCURRENCY": {
       "description": "The number of processes to run.",
-      "value": "2"
+      "value": "5"
     },
     "API_AUTH_TOKEN": {
       "description": "API Auth token",
@@ -36,10 +36,10 @@
   ],
   "buildpacks": [
     {
-      "url": "heroku/java"
+      "url": "heroku/ruby"
     },
     {
-      "url": "heroku/ruby"
+      "url": "https://github.com/heroku/heroku-buildpack-jvm-common.git"
     }
   ]
 }
