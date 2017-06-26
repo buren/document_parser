@@ -3,7 +3,13 @@ require 'yomu'
 class DocumentsController < ApplicationController
   def create
     file_param = document_params[:file]
-    decoded_file = Base64.decode64(file_param)
+    begin
+      decoded_file = Base64.strict_decode64(file_param)
+    rescue ArgumentError
+      render json: { status: 400, message: 'Invalid Base64 string' }
+      return
+    end
+
     decoded_io = StringIO.new(decoded_file)
 
     parsed_document = Yomu.new(decoded_io)
